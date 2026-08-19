@@ -12,7 +12,7 @@ export const experienceConfig: ExperienceConfig = {
 
   background: {
     // Default image path or high-res artwork representation
-    image: "/bg.png",
+    image: "./bg.png",
     positionDesktop: "center center",
     positionMobile: "50% 15%", // Center shop signboard and text on mobile screens
     overlayOpacity: 0.25,
