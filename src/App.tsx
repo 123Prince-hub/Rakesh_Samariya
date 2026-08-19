@@ -178,8 +178,8 @@ export default function App() {
           <h1 className="font-devanagari text-5xl sm:text-6xl md:text-7xl text-[#fffbeb] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] tracking-wide font-black">
             राकेश <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(245,158,11,0.4)]">सामरिया</span>
           </h1>
-          <p className="text-[10px] sm:text-xs text-amber-200/60 font-mono tracking-widest uppercase mt-4 opacity-80">
-            Crafted with <span className="text-amber-500/80">❤</span> by <span className="font-bold text-amber-100/80">Prince Kirad</span>
+          <p className="text-xs sm:text-sm md:text-base text-amber-200 font-mono tracking-widest mt-6 bg-black/40 inline-block px-4 py-1.5 rounded-full border border-amber-900/50 backdrop-blur-sm drop-shadow-xl">
+            CRAFTED WITH <span className="text-amber-500">❤</span> BY <span className="font-bold text-amber-100">PRINCE KIRAD</span>
           </p>
         </div>
       </section>
