@@ -175,7 +175,7 @@ export default function App() {
       {/* 3. Center Atmospheric Title / Identity Overlay */}
       <section className="relative z-10 w-full px-3 sm:px-8 text-center pointer-events-none my-auto transition-opacity duration-700">
         <div className="max-w-3xl mx-auto space-y-1 sm:space-y-1.5">
-          <h1 className="font-devanagari text-2xl sm:text-5xl md:text-6xl text-[#fffbeb] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] tracking-wide font-black">
+          <h1 className="font-devanagari text-5xl sm:text-6xl md:text-7xl text-[#fffbeb] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] tracking-wide font-black">
             राकेश <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(245,158,11,0.4)]">सामरिया</span>
           </h1>
         </div>
