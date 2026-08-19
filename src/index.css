@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Mukta', sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: #0e0a07;
+    background-image: url('/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fef3c7;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      background-position: 50% 12%;
+    }
+  }
+
+  /* Custom scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(20, 14, 10, 0.8);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(180, 83, 9, 0.5);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(245, 158, 11, 0.8);
+  }
+}
+
+/* Hindi / Devanagari Display Typography classes */
+.font-devanagari {
+  font-family: 'Yatra One', 'Rozha One', 'Mukta', serif;
+}
+
+.font-serif-cinematic {
+  font-family: 'Cinzel', 'Rozha One', serif;
+}
+
+.font-radio {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+/* Subtle glow animations */
+@keyframes ambientGlow {
+  0%, 100% {
+    opacity: 0.75;
+    filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.3));
+  }
+  50% {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 25px rgba(251, 191, 36, 0.55));
+  }
+}
+
+.animate-ambient-glow {
+  animation: ambientGlow 4s ease-in-out infinite;
+}

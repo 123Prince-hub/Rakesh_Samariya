@@ -1,0 +1,6 @@
+{
+  "name": "Shaam Ka Radio — Monsoon Dusk Music Experience",
+  "description": "An immersive cinematic Indian music microsite set in a monsoon dusk bazaar, powered by YouTube playlist playback, ambient rain synthesis, and vintage transistor radio console.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
