@@ -87,28 +87,7 @@ export class AmbientAudioEngine {
     rainSource.start(0);
     this.rainNoiseNode = rainSource;
 
-    // 2. Create subtle Vintage Radio AM Transistor Crackle
-    const staticBuffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
-    const staticData = staticBuffer.getChannelData(0);
-    for (let i = 0; i < bufferSize; i++) {
-      // sparse pops + gentle brownian hum
-      const pop = Math.random() > 0.998 ? (Math.random() * 2 - 1) * 0.8 : 0;
-      staticData[i] = (Math.random() * 2 - 1) * 0.08 + pop;
-    }
-
-    const staticSource = this.ctx.createBufferSource();
-    staticSource.buffer = staticBuffer;
-    staticSource.loop = true;
-
-    const staticFilter = this.ctx.createBiquadFilter();
-    staticFilter.type = 'bandpass';
-    staticFilter.frequency.setValueAtTime(2200, this.ctx.currentTime);
-    staticFilter.Q.setValueAtTime(3.0, this.ctx.currentTime);
-
-    staticSource.connect(staticFilter);
-    staticFilter.connect(this.radioStaticGain);
-    staticSource.start(0);
-    this.staticNoiseNode = staticSource;
+    // FM Radio Static Crackle functionality removed as requested
   }
 
   public stop() {
@@ -148,26 +127,7 @@ export class AmbientAudioEngine {
   }
 
   public triggerTuningSwoosh() {
-    this.initContext();
-    if (!this.ctx || !this.masterGain) return;
-    try {
-      const osc = this.ctx.createOscillator();
-      const gain = this.ctx.createGain();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(400, this.ctx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(1200, this.ctx.currentTime + 0.15);
-      osc.frequency.exponentialRampToValueAtTime(300, this.ctx.currentTime + 0.3);
-
-      gain.gain.setValueAtTime(0.08, this.ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.3);
-
-      osc.connect(gain);
-      gain.connect(this.masterGain);
-      osc.start();
-      osc.stop(this.ctx.currentTime + 0.3);
-    } catch {
-      // ignore
-    }
+    // FM tuning functionality removed as requested
   }
 
   public isEnabled(): boolean {

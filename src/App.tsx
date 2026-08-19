@@ -148,8 +148,7 @@ export default function App() {
  
   const handleTuneStation = useCallback((freq: number) => {
     ambientEngine.triggerTuningSwoosh();
-    showToast(`ट्यूनिंग स्टेशन: MW ${freq} kHz`);
-  }, [showToast]);
+  }, []);
 
   const handleToggleRain = useCallback(() => {
     setRainAudioEnabled((prev) => {
