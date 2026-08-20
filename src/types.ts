@@ -27,7 +27,8 @@ export interface ExperienceConfig {
     locationText: string;
   };
   background: {
-    image: string;
+    imageDesktop: string;
+    imageMobile: string;
     positionDesktop: string;
     positionMobile: string;
     overlayOpacity: number;

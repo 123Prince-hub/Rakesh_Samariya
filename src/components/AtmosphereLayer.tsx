@@ -14,20 +14,22 @@ export const AtmosphereLayer: React.FC<AtmosphereLayerProps> = ({
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageFailed, setImageFailed] = useState(false);
 
-  const bgImage = experienceConfig.background.image;
+  const bgDesktop = experienceConfig.background.imageDesktop;
+  const bgMobile = experienceConfig.background.imageMobile;
 
   // Preload and verify background image
   useEffect(() => {
     setImageLoaded(false);
     setImageFailed(false);
 
-    if (!bgImage) {
+    if (!bgDesktop && !bgMobile) {
       setImageFailed(true);
       return;
     }
 
     const img = new Image();
-    img.src = bgImage;
+    // Preload the desktop image as primary check
+    img.src = bgDesktop || bgMobile;
     img.onload = () => {
       setImageLoaded(true);
       setImageFailed(false);
@@ -36,7 +38,7 @@ export const AtmosphereLayer: React.FC<AtmosphereLayerProps> = ({
       setImageLoaded(false);
       setImageFailed(true);
     };
-  }, [bgImage]);
+  }, [bgDesktop, bgMobile]);
 
   // Render animated rain particles & street puddle ripples
   useEffect(() => {
@@ -151,18 +153,21 @@ export const AtmosphereLayer: React.FC<AtmosphereLayerProps> = ({
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
       {/* 1. Primary Scene Canvas Artwork / Image */}
-      {imageLoaded && bgImage ? (
+      {imageLoaded && (bgDesktop || bgMobile) ? (
         <div className="absolute inset-0 w-full h-full overflow-hidden">
-          <img
-            src={bgImage}
-            alt="Rakesh Samariya Collection Scene"
-            referrerPolicy="no-referrer"
-            className="w-full h-full object-cover [object-position:50%_12%] md:[object-position:center_center] transition-transform duration-1000 ease-out"
-            style={{
-              transform: isPlaying ? 'scale(1.02)' : 'scale(1.0)',
-              filter: 'contrast(1.05) brightness(0.96)',
-            }}
-          />
+          <picture>
+            <source media="(max-width: 768px)" srcSet={bgMobile} />
+            <img
+              src={bgDesktop}
+              alt="Rakesh Samariya Collection Scene"
+              referrerPolicy="no-referrer"
+              className="w-full h-full object-cover [object-position:50%_12%] md:[object-position:center_center] transition-transform duration-1000 ease-out"
+              style={{
+                transform: isPlaying ? 'scale(1.02)' : 'scale(1.0)',
+                filter: 'contrast(1.05) brightness(0.96)',
+              }}
+            />
+          </picture>
         </div>
       ) : (
         /* Render fallback cinematic atmospheric scene if direct image is still loading or unavailable */
