@@ -172,20 +172,28 @@ export default function App() {
         rainEnabled={rainAudioEnabled}
       />
 
-      {/* 3. Center Atmospheric Title / Identity Overlay */}
-      <section className="relative z-10 w-full px-3 sm:px-8 text-center pointer-events-none my-auto transition-opacity duration-700">
-        <div className="max-w-3xl mx-auto space-y-1 sm:space-y-1.5">
-          <h1 className="font-devanagari text-5xl sm:text-6xl md:text-7xl text-[#fffbeb] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] tracking-wide font-black">
-            राकेश <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(245,158,11,0.4)]">सामरिया</span>
-          </h1>
-          <p className="text-xs sm:text-sm md:text-base text-amber-200 font-mono tracking-widest mt-2 bg-black/40 inline-block px-4 py-1.5 rounded-full border border-amber-900/50 backdrop-blur-sm drop-shadow-xl">
-            CRAFTED WITH <span className="text-amber-500">❤</span> BY <span className="font-bold text-amber-100">PRINCE KIRAD</span>
-          </p>
-        </div>
-      </section>
+      {/* Soft Black Fog Layer behind the Music Player */}
+      <div 
+        className="absolute bottom-0 left-0 w-full h-56 sm:h-72 pointer-events-none z-10"
+        style={{
+          background: 'radial-gradient(ellipse 100% 100% at 50% 100%, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)'
+        }}
+      ></div>
 
-      {/* 4. Bottom Music Player Console (Vintage Transistor Radio or Compact HUD) */}
-      <section className="relative z-20 w-full px-2 sm:px-6 mb-4 sm:mb-6 pointer-events-auto">
+      {/* 4. Bottom Music Player Console & Developer Credit */}
+      <section className="relative z-20 w-full px-2 sm:px-6 mb-4 sm:mb-6 pointer-events-auto mt-auto flex flex-col items-center">
+        {/* Floating Developer Credit (Centered above player) */}
+        <div className="mb-3">
+          <a 
+            href="https://github.com/123Prince-hub" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group flex items-center justify-center gap-1.5 text-[9px] sm:text-[11px] md:text-xs text-amber-200/80 hover:text-amber-100 font-mono tracking-widest bg-black/30 hover:bg-black/50 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-amber-900/30 hover:border-amber-700/50 backdrop-blur-md transition-all drop-shadow-lg cursor-pointer"
+          >
+            CRAFTED WITH <span className="text-amber-500 group-hover:scale-110 transition-transform">❤</span> BY <span className="font-bold text-amber-100/90 group-hover:text-amber-300 transition-colors">PRINCE KIRAD</span>
+          </a>
+        </div>
+        
         <TransistorRadioPlayer
           playerState={playerState}
           onPlay={handlePlay}

@@ -12,8 +12,8 @@ export const experienceConfig: ExperienceConfig = {
 
   background: {
     // Responsive background images
-    imageDesktop: "./bg1.jpeg",
-    imageMobile: "./bg2.jpeg",
+    imageDesktop: "./bg2.jpeg",
+    imageMobile: "./bg1.jpeg",
     positionDesktop: "center center",
     positionMobile: "50% 15%", // Center shop signboard and text on mobile screens
     overlayOpacity: 0.25,
@@ -92,7 +92,7 @@ export const experienceConfig: ExperienceConfig = {
   effects: {
     grain: true,
     vignette: true,
-    rainParticles: true,
+    rainParticles: false,
     ambientGlow: true,
     lampFlicker: true,
     parallax: true,

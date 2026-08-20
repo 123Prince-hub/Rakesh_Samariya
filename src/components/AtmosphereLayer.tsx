@@ -40,115 +40,6 @@ export const AtmosphereLayer: React.FC<AtmosphereLayerProps> = ({
     };
   }, [bgDesktop, bgMobile]);
 
-  // Render animated rain particles & street puddle ripples
-  useEffect(() => {
-    if (!rainEnabled) return;
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let animationFrameId: number;
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
-
-    const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    };
-    window.addEventListener('resize', handleResize);
-
-    // Particle system for monsoon rain
-    interface Drop {
-      x: number;
-      y: number;
-      speed: number;
-      len: number;
-      opacity: number;
-    }
-
-    interface Ripple {
-      x: number;
-      y: number;
-      radius: number;
-      maxRadius: number;
-      opacity: number;
-    }
-
-    const dropCount = window.innerWidth < 768 ? 60 : 140;
-    const drops: Drop[] = Array.from({ length: dropCount }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      speed: 12 + Math.random() * 10,
-      len: 12 + Math.random() * 16,
-      opacity: 0.15 + Math.random() * 0.25,
-    }));
-
-    const ripples: Ripple[] = [];
-
-    const render = () => {
-      ctx.clearRect(0, 0, width, height);
-
-      // Draw subtle falling rain streaks
-      ctx.strokeStyle = 'rgba(254, 243, 199, 0.4)';
-      ctx.lineWidth = 1.2;
-
-      for (let i = 0; i < drops.length; i++) {
-        const d = drops[i];
-        ctx.beginPath();
-        ctx.moveTo(d.x, d.y);
-        // Slanted rain angle
-        ctx.lineTo(d.x - 2, d.y + d.len);
-        ctx.strokeStyle = `rgba(253, 230, 138, ${d.opacity})`;
-        ctx.stroke();
-
-        d.y += d.speed;
-        d.x -= 1.2;
-
-        if (d.y > height) {
-          // Chance to trigger puddle ripple on the street (lower half)
-          if (d.x < width * 0.5 && d.y > height * 0.65 && Math.random() > 0.6) {
-            ripples.push({
-              x: d.x,
-              y: d.y - Math.random() * 10,
-              radius: 1,
-              maxRadius: 10 + Math.random() * 14,
-              opacity: 0.4,
-            });
-          }
-          d.y = -20;
-          d.x = Math.random() * (width + 100);
-        }
-      }
-
-      // Draw subtle ripples on wet pavement
-      for (let j = ripples.length - 1; j >= 0; j--) {
-        const r = ripples[j];
-        ctx.beginPath();
-        ctx.ellipse(r.x, r.y, r.radius * 2, r.radius * 0.7, 0, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(245, 158, 11, ${r.opacity})`;
-        ctx.lineWidth = 0.8;
-        ctx.stroke();
-
-        r.radius += 0.4;
-        r.opacity -= 0.015;
-
-        if (r.opacity <= 0 || r.radius >= r.maxRadius) {
-          ripples.splice(j, 1);
-        }
-      }
-
-      animationFrameId = requestAnimationFrame(render);
-    };
-
-    render();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, [rainEnabled]);
 
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
@@ -196,13 +87,7 @@ export const AtmosphereLayer: React.FC<AtmosphereLayerProps> = ({
         }}
       />
 
-      {/* 3. Rain Canvas Layer */}
-      {rainEnabled && (
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 w-full h-full pointer-events-none opacity-80 mix-blend-screen"
-        />
-      )}
+      {/* Rain Canvas Layer Removed */}
 
       {/* 4. Film Grain & Atmospheric Vignette */}
       <div 
