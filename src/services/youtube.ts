@@ -206,7 +206,7 @@ export class YouTubePlayerManager {
       currentTrackIndex: currentIndex >= 0 ? currentIndex : 0,
       currentVideoId: videoId,
       currentTitle: videoData?.title || (isPlaying ? 'Playing Melody' : 'Vintage Radio Melody'),
-      currentArtist: videoData?.author || 'Rakesh Samariya Collection',
+      currentArtist: videoData?.author || 'Rakesh Sanwariya Collection',
       duration: duration || 0,
       currentTime: currentTime || 0,
       playlist: playlist.length > 0 ? playlist : [],

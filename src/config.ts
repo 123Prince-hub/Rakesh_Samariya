@@ -2,8 +2,8 @@ import { ExperienceConfig } from './types';
 
 export const experienceConfig: ExperienceConfig = {
   site: {
-    title: "RAKESH SAMARIYA COLLECTION",
-    hindiTitle: "राकेश सामरिया — कलेक्शन",
+    title: "RAKESH SANWARIYA COLLECTION",
+    hindiTitle: "राकेश सांवरिया — कलेक्शन",
     subtitle: "A Nostalgic Monsoon Dusk · Vintage Radio & Soulful Melodies",
     description: "An immersive Indian music microsite set in a monsoon dusk bazaar, listening to old & new memories over a transistor radio.",
     shopSignText: "श्री सांवरिया कलेक्शन · MENS WEAR PREMIUM QUALITY",

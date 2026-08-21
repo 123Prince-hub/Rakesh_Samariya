@@ -50,7 +50,7 @@ export const AtmosphereLayer: React.FC<AtmosphereLayerProps> = ({
             <source media="(max-width: 768px)" srcSet={bgMobile} />
             <img
               src={bgDesktop}
-              alt="Rakesh Samariya Collection Scene"
+              alt="Rakesh Sanwariya Collection Scene"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover [object-position:50%_12%] md:[object-position:center_center] transition-transform duration-1000 ease-out"
               style={{
@@ -186,11 +186,11 @@ const FallbackSceneSvg: React.FC<{ isPlaying: boolean }> = ({ isPlaying }) => {
       <polygon points="0,700 480,720 380,1080 0,1080" fill="url(#wetStreetGrad)" opacity="0.9" />
       <path d="M 50,780 Q 180,790 320,830 Q 150,920 40,980 Z" fill="#f59e0b" opacity="0.3" filter="blur(8px)" />
 
-      {/* Pavement Standee Board: RAKESH SAMARIYA COLLECTION */}
+      {/* Pavement Standee Board: RAKESH SANWARIYA COLLECTION */}
       <polygon points="360,640 570,640 595,960 330,960" fill="#2b1d16" stroke="#4a3022" strokeWidth="4" />
       <rect x="375" y="660" width="175" height="270" fill="#1e140f" stroke="#8a532d" strokeWidth="2" rx="3" />
       <text x="462" y="720" fill="#fcd34d" fontFamily="'Cinzel', serif" fontWeight="bold" fontSize="20" textAnchor="middle">RAKESH</text>
-      <text x="462" y="748" fill="#fcd34d" fontFamily="'Cinzel', serif" fontWeight="bold" fontSize="17" textAnchor="middle">SAMARIYA</text>
+      <text x="462" y="748" fill="#fcd34d" fontFamily="'Cinzel', serif" fontWeight="bold" fontSize="17" textAnchor="middle">SANWARIYA</text>
       <text x="462" y="775" fill="#fbbf24" fontFamily="'Cinzel', serif" fontSize="13" letterSpacing="3" textAnchor="middle">COLLECTION</text>
       <line x1="400" y1="795" x2="525" y2="795" stroke="#f59e0b" strokeWidth="1.5" />
       <text x="462" y="830" fill="#fed7aa" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="bold" fontSize="13" letterSpacing="1" textAnchor="middle">MENS WEAR</text>
@@ -199,10 +199,10 @@ const FallbackSceneSvg: React.FC<{ isPlaying: boolean }> = ({ isPlaying }) => {
       {/* Main Shop Building Structure */}
       {/* Upper wall */}
       <rect x="680" y="80" width="1240" height="280" fill="#382419" />
-      {/* Main Grand Signboard: RAKESH SAMARIYA COLLECTION */}
+      {/* Main Grand Signboard: RAKESH SANWARIYA COLLECTION */}
       <rect x="880" y="90" width="820" height="95" fill="#fef3c7" stroke="#b45309" strokeWidth="5" rx="6" />
       <rect x="886" y="96" width="808" height="83" fill="#ffedd5" stroke="#d97706" strokeWidth="2" />
-      <text x="1290" y="145" fill="#78350f" fontFamily="'Cinzel', 'Yatra One', serif" fontWeight="900" fontSize="38" letterSpacing="2" textAnchor="middle">RAKESH SAMARIYA</text>
+      <text x="1290" y="145" fill="#78350f" fontFamily="'Cinzel', 'Yatra One', serif" fontWeight="900" fontSize="38" letterSpacing="2" textAnchor="middle">RAKESH SANWARIYA</text>
       <text x="1290" y="170" fill="#b45309" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="bold" fontSize="15" letterSpacing="7" textAnchor="middle">COLLECTION</text>
 
       {/* Shop Awning Canopy */}
@@ -239,7 +239,7 @@ const FallbackSceneSvg: React.FC<{ isPlaying: boolean }> = ({ isPlaying }) => {
       <rect x="1000" y="740" width="620" height="280" fill="#3b2316" stroke="#543320" strokeWidth="4" />
       <rect x="1020" y="760" width="580" height="240" fill="#29180e" stroke="#78350f" strokeWidth="2" rx="4" />
       <text x="1310" y="840" fill="#d97706" fontFamily="'Cinzel', serif" fontSize="24" fontWeight="bold" textAnchor="middle">RAKESH</text>
-      <text x="1310" y="870" fill="#d97706" fontFamily="'Cinzel', serif" fontSize="20" letterSpacing="4" textAnchor="middle">SAMARIYA</text>
+      <text x="1310" y="870" fill="#d97706" fontFamily="'Cinzel', serif" fontSize="20" letterSpacing="4" textAnchor="middle">SANWARIYA</text>
       <text x="1310" y="900" fill="#b45309" fontFamily="'Cinzel', serif" fontSize="13" letterSpacing="5" textAnchor="middle">COLLECTION</text>
 
       {/* The Shopkeeper Silhouette / Figure sitting at the desk resting head on arm */}
